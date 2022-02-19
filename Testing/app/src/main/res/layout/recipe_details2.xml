@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PlayerActivity"
+    >
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        >
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/playervideoRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_video2"/>
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/back_btn"
+            android:src="@drawable/down_icon"
+            app:tint="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/showBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="35dp"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/showrecipe_btn"
+            android:src="@drawable/showrecipe_icon"
+            app:tint="@android:color/white" />
+
+
+        <LinearLayout
+            android:id="@+id/bottomController"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/playervideoRv"
+            android:orientation="horizontal"
+            android:background="#42000000"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="end|bottom">
+
+            <ImageButton
+                android:id="@+id/fullscreenBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/fullscreen_icon"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="@string/fullscreen_btn"
+                app:tint="@android:color/white"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_below="@+id/relative1"
+        android:scrollbars="none"
+        >
+    <RelativeLayout
+        android:id="@+id/relative2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    <TextView
+        android:id="@+id/playerdes_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Ingredients"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="10dp"
+        />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/playeringred_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/playerdes_title"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/recipedescription" />
+
+    <TextView
+        android:id="@+id/playerins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playeringred_content"
+        android:layout_marginLeft="10dp"
+        android:text="Instruction"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="10dp"
+        />
+        <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/playerins_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playerins"
+        android:layout_margin="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/recipeinstructions"
+        />
+    </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/recipeOptionLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/design_default_color_primary"
+        android:orientation="horizontal"
+        android:backgroundTint="@color/pink">
+
+        <Button
+            android:id="@+id/favoriteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_favorite_border_white"
+            android:text="Add Favorite"
+            android:textSize="10sp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/addToCartBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_shopping_cart_white"
+            android:text="Add to Cart"
+            android:textSize="10sp"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

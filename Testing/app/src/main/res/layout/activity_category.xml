@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CategoryActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/homeback"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/appTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:maxLines="1"
+            android:text="Grozy"
+            android:textColor="#5D7165"
+            android:textSize="60sp" />
+
+        <TextView
+            android:id="@+id/subTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appTitleTv"
+            android:layout_marginLeft="40dp"
+
+            android:maxLines="1"
+            android:text="Deliver healthy for you "
+            android:textColor="#5D7165"
+            android:textSize="25sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/recommendation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_below="@id/toolbarRl">
+
+        <TextView
+            android:id="@+id/popular0RecipeIv"
+            android:layout_width="115dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:text="Today's Recommend"
+            android:textSize="20sp"
+            android:background="#F8E2E2"/>
+
+        <ImageView
+            android:id="@+id/popularRecipeIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@id/popular0RecipeIv"
+            android:src="@drawable/recommend1" />
+
+        <ImageView
+            android:id="@+id/popular2RecipeIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@id/popularRecipeIv"
+            android:src="@drawable/recommend2" />
+
+        <ImageView
+            android:id="@+id/popular3RecipeIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@id/popular2RecipeIv"
+            android:src="@drawable/recommend3" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/searchEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recommendation"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/search_bar"
+        android:drawableStart="@drawable/ic_search_gray"
+        android:hint="Search for recipe"
+        android:maxLines="1"
+        android:padding="10dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoriesRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchEt"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_category" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/darkgreen">
+
+        <Button
+            android:id="@+id/cartBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cart"
+            android:textSize="10sp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_shopping_cart_white"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/orderListBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:text="Order List"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/ic_cart_list_white"/>
+
+        <Button
+            android:id="@+id/profileBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textSize="10sp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_person"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/favoriteListBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Favorite"
+            android:textSize="10sp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_favorite_filled_white"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
